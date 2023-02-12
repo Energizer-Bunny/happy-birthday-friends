@@ -1,26 +1,25 @@
-import React from 'react';
+import React  from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import sketch from './sketch';
-import p5 from 'p5';
-
-const TEXT = 'Happy Birthday Trisha';
-
-const App = () => {
-  const canvasRef = React.useRef(null)
-
-  React.useEffect(() => {
-    const canvasDivElement = canvasRef.current;
-
-    // NOTE: If you change TEXT value to something else, you'll need to make changes in sketch.js as well to make it work
-    // See my comments in sketch.js
-    new p5(sketch(canvasDivElement, TEXT), canvasDivElement);
-  })
-
+import MainPage from './pages/MainPage';
+import Wishes from './pages/Wishes';
+function App() {
   return (
-    <div className="main">
-      <div ref={canvasRef} />
-    </div >
-  )
+    <Router>
+           <div className="App">
+           <Routes>
+                 <Route exact path='/' element={< MainPage />}></Route>
+                 <Route exact path='/wishes' element={< Wishes />}></Route>
+          </Routes>
+          </div>
+       </Router>
+  );
 }
 
 export default App;
