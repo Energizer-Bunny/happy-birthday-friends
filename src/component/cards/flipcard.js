@@ -23,7 +23,7 @@ function Flipacrd() {
             }}>
                 <Card.Img src={fImagePath} style={{ width: '18rem' ,height:'20rem'}}/>
                 <Card.ImgOverlay>
-                    <Card.Title>A wish For You BRO</Card.Title>
+                    <Card.Title>A wish For You</Card.Title>
                     <Card.Text>
                         {frontText}
                     </Card.Text>
