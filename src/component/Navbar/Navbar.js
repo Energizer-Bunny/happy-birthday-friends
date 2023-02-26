@@ -2,10 +2,11 @@ import React  from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import data from '../../Resources/data.json'
+import data from '../../Resources/data.json';
+import navstyle from './navbar.module.css';
 function NavbarComp(props) {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={navstyle.navcss}>
       <Container>
         <Navbar.Brand href={"/home/"+props.birthdayGuy}>HBD {data[props.birthdayGuy]}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

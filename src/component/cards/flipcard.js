@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import Card from 'react-bootstrap/Card';
 import data from '../../Resources/data.json';
+import flipcardcss from './cards.module.css';
 const imagePath = '/images';
 function Flipacrd() {
     const [flip, setFlip] = useState(false);
@@ -14,7 +15,8 @@ function Flipacrd() {
     return (
         <ReactCardFlip isFlipped={flip}
             flipDirection="horizontal">
-            <Card style={{ width: '18rem'}} className="mb-2" onClick={() => {
+            <Card style={{ width: '18rem'}} className={"mb-2 "+ flipcardcss.flipcardCss}
+             onClick={() => {
                 setFlip(!flip)
                 setIndex(Math.floor(Math.random() * 200))
                 setBackText(data.quote[index])
